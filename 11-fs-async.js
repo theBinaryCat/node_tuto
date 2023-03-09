@@ -23,7 +23,7 @@ readFile(
                     `Here is the results: ${first}, ${second}`,
                     (err,result)=>{
                         if(err){
-                            HTMLFormControlsCollection.log(err)
+                            console.log(err)
                         }
                         console.log('done with this task')
                     }
