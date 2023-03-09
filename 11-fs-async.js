@@ -1,5 +1,7 @@
 const {readFile, writeFile} = require('fs')
 
+console.log('start')
+
 readFile(
     './content/first.txt',
     'utf8',
@@ -23,10 +25,13 @@ readFile(
                         if(err){
                             HTMLFormControlsCollection.log(err)
                         }
-                        console.log(result)
+                        console.log('done with this task')
                     }
                 )
             }
         )
     }
 )
+
+
+console.log('starting the new task task')
