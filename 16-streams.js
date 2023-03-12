@@ -9,4 +9,4 @@ readStream.on('data', (chunk) => {
     writeStream.write(chunk)
 })
 
-readStream.on('error',(err) => {console.log(err)}
+readStream.on('error',(err) => {console.log(err)})
