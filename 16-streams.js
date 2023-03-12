@@ -8,3 +8,5 @@ readStream.on('data', (chunk) => {
     console.log('new chunk received')
     writeStream.write(chunk)
 })
+
+readStream.on('error',(err) => {console.log(err)}
