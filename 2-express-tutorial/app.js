@@ -5,13 +5,9 @@ const path = require('path')
 //setup static and middleware
 app.use(express.static('./public'))
 
-app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'))
-})
-
-app.get('/about', (req, res)=> {
-    res.status(200).send('About Page')
-})
+//app.get('/', (req, res) => {
+//    res.sendFile(path.resolve(__dirname,'./navbar-app/index.html'))
+//})
 
 app.all('*', (req, res) => {
     res.status(404).send('Page Not Found')
