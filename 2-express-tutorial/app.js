@@ -4,7 +4,7 @@ const logger = require('./logger')
 
 //req => middleware => res
 
-app.use(logger)
+app.use('/api',logger) //it works with every url starts with api
 
 app.get('/', (req, res) => {
     res.send('Home')
