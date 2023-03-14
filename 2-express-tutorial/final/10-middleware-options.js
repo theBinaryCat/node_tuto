@@ -1,28 +1,22 @@
 const express = require('express')
 const app = express()
-const morgan = require('morgan')
+const morgan = require ('morgan')
 const logger = require('./logger')
 const authorize = require('./authorize')
-//  req => middleware => res
 
-// app.use([logger, authorize])
-// app.use(express.static('./public'))
+
+//req => middleware => res
 app.use(morgan('tiny'))
+//app.use([logger, authorize]) //it works with every url starts with api
 
 app.get('/', (req, res) => {
-  res.send('Home')
-})
-app.get('/about', (req, res) => {
-  res.send('About')
-})
-app.get('/api/products', (req, res) => {
-  res.send('Products')
-})
-app.get('/api/items', (req, res) => {
-  console.log(req.user)
-  res.send('Items')
+    res.send('Home')
 })
 
-app.listen(5000, () => {
-  console.log('Server is listening on port 5000....')
+app.get('/about', (req, res) => {
+    res.send('About')
+})
+
+app.listen((5000),() => {
+    console.log('Server is listening on port 5000...')
 })
