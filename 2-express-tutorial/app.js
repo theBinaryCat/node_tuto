@@ -1,10 +1,11 @@
 const express = require('express')
 const app = express()
 const logger = require('./logger')
+const authorize = require('./authorize')
 
 //req => middleware => res
 
-app.use('/api',logger) //it works with every url starts with api
+app.use([logger, authorize]) //it works with every url starts with api
 
 app.get('/', (req, res) => {
     res.send('Home')
