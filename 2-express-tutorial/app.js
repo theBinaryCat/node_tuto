@@ -20,6 +20,24 @@ app.get('/api/products/:ID/reviews/:reviewID', (req, res) => {
     console.log('Hello World')
 })
 
+app.get('/api/v1/query', (req, res) => {
+    console.log(req.query)
+    const {search, limit} = req.query
+    let sortedProducts = [...products]
+    if(search){
+        sortedProducts = sortedProducts.filter((product) =>  {
+            return product.name.startsWith(search)
+        })
+    }
+    if(limit){
+        return sortedProducts = sortedProducts.slice(0, Number(limit))
+    }
+    if(sortedProducts.length < 1){
+        return res.status(200).json({success:true, data: []})
+    }
+    return res.status(200).json(sortedProducts)
+})
+
 app.get('/api/products', (req, res) => {
     const newProducts = products.map((product) => {
         const {id, name, image} = product
