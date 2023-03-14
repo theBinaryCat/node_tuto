@@ -15,6 +15,11 @@ app.get('/api/products/:ID', (req, res) => {
     res.json(singleProduct)
 })
 
+app.get('/api/products/:ID/reviews/:reviewID', (req, res) => {
+    console.log(req.params)
+    console.log('Hello World')
+})
+
 app.get('/api/products', (req, res) => {
     const newProducts = products.map((product) => {
         const {id, name, image} = product
