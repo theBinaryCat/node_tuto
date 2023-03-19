@@ -5,6 +5,7 @@ require('dotenv').config()
 const port = 3000
 const tasks = require('./routes/tasks.js')
 
+app.use(express.static('./public'))
 app.use(express.json())
 app.use('/api/v1/tasks',tasks)
 
